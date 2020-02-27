@@ -99,6 +99,10 @@ for fpath in fpaths:
 
     bpy.ops.import_scene.obj(filepath=fpath, use_smooth_groups=False)
 
+    for o in bpy.data.objects:
+      if o.name!="Camera":
+        obj_name = o.name
+
     obj = bpy.data.objects[obj_name]
     for mat in obj.material_slots:
         mat.material.use_nodes = True
