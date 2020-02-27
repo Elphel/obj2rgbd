@@ -66,7 +66,7 @@ What is does:
 
 Example:
 ```
-~$ python3 obj2rgbd.py output/test_cube-image.jpeg output/test_cube-depth-10cm.png
+~$ python3 obj2rgbd.py output/example-test_cube-image.jpeg output/example-test_cube-depth-10cm.png
 ```
 
 ## blender_generate_image_and_depth.py
