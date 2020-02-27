@@ -36,6 +36,7 @@ If it fails this [link](https://stackoverflow.com/questions/45601949/install-ope
 ## obj2rgbd.py
 
 ```~$ python3 obj2rgbd.py [input_folder [depth_map_resolution]]```:
+
 *input_folder* - folder with subfolders with *.obj files, default value - **input**
 *depth_map_resolution* - units in the depth 16-bit *.png file, default value - **0.1**, which is 10cm allowing for **0-6553.5 m** range
 
@@ -53,6 +54,7 @@ Example:
 ## open3d_test.py
 
 ```~$ python3 open3d_test.py [path-to-image-file [path-to-depth-file]]```:
+
 *path-to-image-file* - jpeg, defaults to **output/test_cube-image.jpeg**
 *path-to-depth-file* - 16-bit png, defaults to **output/test_cube-depth-10cm.png**
 
@@ -67,7 +69,9 @@ Example:
 ## blender_generate_image_and_depth.py
 
 Can be run standalone:
-```blender -b -P blender_generate_image_and_depth.py -- path1/model1.obj,path2/model2.obj```
+```
+~$ blender -b -P blender_generate_image_and_depth.py -- path1/model1.obj,path2/model2.obj
+```
 
 # Notes
 
