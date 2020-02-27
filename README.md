@@ -89,4 +89,4 @@ https://community.elphel.com/3d+map
 
 https://community.elphel.com/3d+biquad
 
-Loading everything can takes some time. Once loaded there's a download button in the top-right menu.
+Loading everything can take some time. Once loaded there's a download button in the top-right menu.
