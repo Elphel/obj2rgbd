@@ -7,8 +7,8 @@ import sys
 
 if __name__ == "__main__":
 
-    image_path = "output/test_cube-image.jpeg"
-    depth_path = "output/test_cube-depth-10cm.png"
+    image_path = "output/example-test_cube-image.jpeg"
+    depth_path = "output/example-test_cube-depth-10cm.png"
 
     try:
         image_path = sys.argv[1]

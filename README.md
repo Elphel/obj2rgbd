@@ -56,9 +56,9 @@ Example:
 
 ```~$ python3 open3d_test.py [path-to-image-file [path-to-depth-file]]```:
 
-*path-to-image-file* - jpeg, defaults to **output/test_cube-image.jpeg**
+*path-to-image-file* - jpeg, defaults to **output/example-test_cube-image.jpeg**
 
-*path-to-depth-file* - 16-bit png, defaults to **output/test_cube-depth-10cm.png**
+*path-to-depth-file* - 16-bit png, defaults to **output/example-test_cube-depth-10cm.png**
 
 What is does:
 1. Opens RGB-D pair using Open3D python library. First it displays side-to-side, upon closing the first plot - it display a 3D view. 3D view is BW, didn't check if it can do in color.
