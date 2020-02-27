@@ -1,2 +1,83 @@
-
 # Description
+Generate RGB-D format image pairs from *.obj models with textures using Blender.
+
+# Quickstart
+```
+~$ python3 obj2rgbd.py
+~$ python3 open3d_test.py
+```
+
+# Requirements
+* Blender 2.80 (need to test 2.82 - didn't work for some models)
+* Python3: **numpy, matplotlib, Pillow, open3d, OpenEXR**
+* Tested in Kubuntu 16.04
+
+# Setup
+
+## Blender
+
+* Get Blender 2.80 (need to test 2.82 - didn't work for some models)
+* Add Blender's path to your ~/.bashrc:
+```
+export PATH="/home/$USER/Downloads/blender-2.80-linux-glibc217-x86_64:$PATH"
+```
+
+## Python 3
+
+* numpy, matplotlib, pillow and open3d are trivially installed
+* OpenEXR
+```
+pip install openexr
+```
+If it fails this [link](https://stackoverflow.com/questions/45601949/install-openexr-in-python-doesnt-work) helped.
+
+# Details
+
+## obj2rgbd.py
+
+```~$ python3 obj2rgbd.py [input_folder [depth_map_resolution]]```:
+*input_folder* - folder with subfolders with *.obj files, default value - **input**
+*depth_map_resolution* - units in the depth 16-bit *.png file, default value - **0.1**, which is 10cm allowing for **0-6553.5 m** range
+
+What it does:
+1. Makes a list of all *.obj models found in a given input folder's subfolders
+2. Runs Blender feeding it with the *blender_generate_image_and_depth.py* and the list
+3. Blender script saves results into **output/** (auto created). A single result is a rendered image of a model and the depth buffer saved into 32-bit float *.exr format
+4. After Blender is done for all models *obj2rgbd.py* then generates 16-bit *.png depth images with a given resolution from *.exr files. Results are also in the **output/**
+
+Example:
+```
+~$ python3 obj2rgbd.py input 0.1
+```
+
+## open3d_test.py
+
+```~$ python3 open3d_test.py [path-to-image-file [path-to-depth-file]]```:
+*path-to-image-file* - jpeg, defaults to **output/test_cube-image.jpeg**
+*path-to-depth-file* - 16-bit png, defaults to **output/test_cube-depth-10cm.png**
+
+What is does:
+1. Opens RGB-D pair using Open3D python library. First it displays side-to-side, upon closing the first plot - it display a 3D view. 3D view is BW, didn't check if it can do in color.
+
+Example:
+```
+~$ python3 obj2rgbd.py output/test_cube-image.jpeg output/test_cube-depth-10cm.png
+```
+
+## blender_generate_image_and_depth.py
+
+Can be run standalone:
+```blender -b -P blender_generate_image_and_depth.py -- path1/model1.obj,path2/model2.obj```
+
+# Notes
+
+* Can have multiple models in the same subfolder
+* Model names need to be unique as the output files are dumped in a single **output/** folder
+* *.obj filename must match with the name inside it. See example model in **input/**
+* *obj2rgbd.py* running ```blender -b -P blender_generate_image_and_depth.py -- filelist``` - Blender runs *blender_generate_image_and_depth.py* using its bundled python (Python 3.7 in Blender 2.80). Could have a single script for everything but it's too much effort to install openexr to that bundled python.
+
+# More models
+
+https://community.elphel.com/3d+map
+https://community.elphel.com/3d+biquad
+Loading everything can takes some time. Once loaded there's a download button in the top-right menu.
