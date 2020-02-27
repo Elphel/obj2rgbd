@@ -80,7 +80,7 @@ rn = scene.node_tree.nodes.new('CompositorNodeRLayers')
 depth = scene.node_tree.nodes.new('CompositorNodeOutputFile')
 depth.format.file_format = 'OPEN_EXR'
 depth.format.color_depth = '32'
-# TODO: try BW
+# Note: no option for BW?
 depth.format.color_mode = 'RGB'
 depth.format.exr_codec = 'ZIP'
 depth.base_path = model_output_folder
@@ -109,5 +109,3 @@ for fpath in fpaths:
     bpy.data.objects.remove(obj)
     # rename exr
     os.rename(os.path.join(model_output_folder,'depth-0001.exr'),os.path.join(model_output_folder,obj_name+"-depth.exr"))
-
-

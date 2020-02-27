@@ -11,7 +11,6 @@ def exr2arr(exrfile):
     dw = file.header()['dataWindow']
 
     channels = file.header()['channels'].keys()
-    print(channels)
     channels_list = list()
     for c in ('R', 'G', 'B', 'A'):
         if c in channels:
@@ -23,8 +22,7 @@ def exr2arr(exrfile):
     color_channels = file.channels(channels_list, Imath.PixelType(Imath.PixelType.FLOAT))
     channels_tuple = [np.fromstring(channel, dtype='f') for channel in color_channels]
     res = np.dstack(channels_tuple)
-    res.reshape(size + (len(channels_tuple),))
-    return res[:,:,0]
+    return res.reshape(size + (len(channels_tuple),))
 
 
 if __name__ == "__main__":
