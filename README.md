@@ -1,5 +1,5 @@
 # Description
-Generate RGB-D format image pairs from *.obj models with textures using Blender.
+Batch generate RGB-D format image pairs from *.obj models with textures using Blender.
 
 # Quickstart
 ```
@@ -9,7 +9,7 @@ Generate RGB-D format image pairs from *.obj models with textures using Blender.
 
 # Requirements
 * Blender 2.80 (need to test 2.82 - didn't work for some models)
-* Python3: **numpy, matplotlib, Pillow, open3d, OpenEXR**
+* Python3: **numpy, matplotlib, Pillow, OpenEXR, open3d (optional)**
 * Tested in Kubuntu 16.04
 
 # Setup
@@ -29,7 +29,7 @@ export PATH="/home/$USER/Downloads/blender-2.80-linux-glibc217-x86_64:$PATH"
 ```
 pip install openexr
 ```
-If it fails this [link](https://stackoverflow.com/questions/45601949/install-openexr-in-python-doesnt-work) helped.
+When it failed to install this [link](https://stackoverflow.com/questions/45601949/install-openexr-in-python-doesnt-work) helped.
 
 # Details
 
@@ -62,6 +62,7 @@ Example:
 
 What is does:
 1. Opens RGB-D pair using Open3D python library. First it displays side-to-side, upon closing the first plot - it display a 3D view. 3D view is BW, didn't check if it can do in color.
+2. Hardcoded parameters inside the script: w=2592, h=1902, fx=fy=2045, cx=1296, cy=951
 
 Example:
 ```
