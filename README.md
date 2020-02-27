@@ -86,5 +86,7 @@ Can be run standalone:
 # More models
 
 https://community.elphel.com/3d+map
+
 https://community.elphel.com/3d+biquad
+
 Loading everything can takes some time. Once loaded there's a download button in the top-right menu.
