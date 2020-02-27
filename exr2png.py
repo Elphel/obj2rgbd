@@ -17,6 +17,7 @@ def exr2arr(exrfile):
         if c in channels:
             channels_list.append(c)
 
+    # the shape was incorrect
     #size = (dw.max.x - dw.min.x + 1, dw.max.y - dw.min.y + 1)
     size = (dw.max.y - dw.min.y + 1, dw.max.x - dw.min.x + 1)
     color_channels = file.channels(channels_list, Imath.PixelType(Imath.PixelType.FLOAT))
@@ -27,6 +28,7 @@ def exr2arr(exrfile):
 
 
 if __name__ == "__main__":
+    
     fname = "depth-0001.exr"
     arr = exr_to_array(fname)
     print(arr.shape)

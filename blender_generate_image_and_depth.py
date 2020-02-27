@@ -1,10 +1,8 @@
-import bpy
-import numpy as np
-import os
-
-import sys
-
 '''
+Copyright (C) 2020, Elphel Inc.
+SPDX-License-Identifier: GPL-3.0-or-later
+Author: Oleg K Dzhimiev <oleg@elphel.com> 
+
 Usage:
 
 ~$ blender -b -P blender_generate_image_and_depth.py -- file1,file2,..,fileN
@@ -34,6 +32,12 @@ Comment:
   - didn't work for some models in Blender v2.82.7
 
 '''
+
+import numpy as np
+import os
+import sys
+
+import bpy
 
 model_output_folder = "output"
 
