@@ -108,4 +108,4 @@ for fpath in fpaths:
     bpy.ops.render.render(write_still = True)
     bpy.data.objects.remove(obj)
     # rename exr
-    os.rename(os.path.join(model_output_folder,'depth-0001.exr'),os.path.join(model_output_folder,obj_name+"-depth.exr"))
+    os.rename(os.path.join(model_output_folder,'depth-0001.exr'),os.path.join(model_output_folder,obj_name+"-depth-1m-float32.exr"))
