@@ -61,12 +61,12 @@ Example:
 *path-to-depth-file* - 16-bit png, defaults to **output/example-test_cube-depth-10cm.png**
 
 What is does:
-1. Opens RGB-D pair using Open3D python library. First it displays side-to-side, upon closing the first plot - it display a 3D view. 3D view is BW, didn't check if it can do in color.
+1. Opens RGB-D pair using Open3D python library. First it displays side-to-side, upon closing the first plot - it display a 3D view.
 2. Hardcoded parameters inside the script: w=2592, h=1902, fx=fy=2045, cx=1296, cy=951
 
 Example:
 ```
-~$ python3 obj2rgbd.py output/example-test_cube-image.jpeg output/example-test_cube-depth-10cm.png
+~$ python3 open3d_test.py output/example-test_cube-image.jpeg output/example-test_cube-depth-10cm.png
 ```
 
 ## blender_generate_image_and_depth.py
