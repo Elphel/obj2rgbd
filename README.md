@@ -48,6 +48,7 @@ What it does:
 4. After Blender is done for all models *obj2rgbd.py* then generates 16-bit *.png depth images with a given resolution from *.exr files. Results are also in the **output/**
 
 Example:
+1. 10cm depth resolution
 ```
 ~$ python3 obj2rgbd.py input 0.1
 ```
