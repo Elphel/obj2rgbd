@@ -1,5 +1,5 @@
 # Description
-Batch generate RGB-D format image pairs from *.obj models with textures using Blender.
+Batch generate RGB-D format image pairs from *.obj models with textures in command line using Blender python script.
 
 # Quickstart
 ```
