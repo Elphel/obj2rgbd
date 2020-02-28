@@ -41,6 +41,13 @@ When it failed to install this [link](https://stackoverflow.com/questions/456019
 
 *depth_map_resolution* - units in the depth 16-bit *.png file, default value - **0.1**, which is 10cm allowing for **0-6553.5 m** range
 
+| Value | Depth resolution | Depth range |
+| ------ | :------: | ------ |
+|1|1 m|0-65535 m|
+|0.1|10 cm|0-6553.5 m|
+|0.01|1 cm|0-655.35 m|
+|0.001|1 mm|0-65.535 m|
+
 What it does:
 1. Makes a list of all *.obj models found in a given input folder's subfolders
 2. Runs Blender feeding it with the *blender_generate_image_and_depth.py* and the list
