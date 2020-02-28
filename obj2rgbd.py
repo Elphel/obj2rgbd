@@ -36,7 +36,7 @@ for rs,ds,_ in os.walk(model_input_folder):
 filelist = ','.join(fpaths)
 
 # this will run by Blender's bundled python
-subprocess.run(os.path.join(PATH_TO_BLENDER,'blender')+" -b -nosound -P blender_generate_image_and_depth.py -- "+filelist, shell=True)
+subprocess.run(os.path.join(PATH_TO_BLENDER,'blender')+" -b -noaudio -P blender_generate_image_and_depth.py -- "+filelist, shell=True)
 
 print("All RGB-Ds generated")
 
