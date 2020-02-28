@@ -34,7 +34,7 @@ if __name__ == "__main__":
     #pci0 = o3d.camera.PinholeCameraIntrinsic(psd)
     #pci0 = o3d.camera.PinholeCameraIntrinsic(2592, 1902, 2045, 2045, 1296, 951)
     #fx = fy = 2045
-    # based on 66.8 hfov and 2592 pixels
+    # based on 66.8 hfov and 2592 pixels camera settings in Blender
     fx = fy = 1965
     pci0 = o3d.camera.PinholeCameraIntrinsic(2592, 1902, fx, fy, 1296, 951)
 
